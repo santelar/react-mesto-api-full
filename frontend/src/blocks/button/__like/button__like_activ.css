@@ -1,0 +1,8 @@
+.button__like_activ {
+  background: url(../../../images/card__like_activ.svg) no-repeat;
+  border: 0;
+}
+
+.button__like_activ:active {
+  border: 0;
+}

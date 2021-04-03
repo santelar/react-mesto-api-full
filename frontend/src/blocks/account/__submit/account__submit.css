@@ -1,0 +1,20 @@
+.account__submit {
+    margin-top: 186px;
+    min-height: 50px;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 2px;
+    box-shadow: none;
+    color: #000000;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.22;
+    text-align: center;
+}
+
+.account__submit:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}

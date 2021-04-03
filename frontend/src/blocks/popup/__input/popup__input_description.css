@@ -1,0 +1,9 @@
+.popup__input_description {
+  padding: 10px 0 13px 0;
+}
+  
+@media screen and (max-width: 620px) {
+  .popup__input_description {
+  margin-bottom: 10px;
+  }
+}

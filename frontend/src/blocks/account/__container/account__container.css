@@ -1,0 +1,8 @@
+.account__container {
+    margin: auto;
+    padding: 60px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}

@@ -1,0 +1,16 @@
+.register__link {
+    padding-top: 15px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.17;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.register__link:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}

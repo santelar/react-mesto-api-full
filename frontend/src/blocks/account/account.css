@@ -1,0 +1,6 @@
+.account {
+    margin: 0 auto;
+    position: relative;
+    max-width: 358px;
+    display: flex;
+}

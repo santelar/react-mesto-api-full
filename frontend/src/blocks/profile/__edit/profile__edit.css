@@ -1,0 +1,31 @@
+.profile__edit {
+  margin: 0px 0 0 16px;
+  padding: 7px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.profile__edit:hover {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 940px) {
+  .profile__edit {
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  margin: 0 0 10px 0;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .profile__edit {
+  width: 18px;
+  height: 18px;
+  margin: 0 0 0 12px;
+  }
+}

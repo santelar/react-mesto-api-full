@@ -1,0 +1,17 @@
+.account__switch-text {
+    margin: 15px auto;
+    color: #FFFFFF;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.17;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.account__switch-text:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}

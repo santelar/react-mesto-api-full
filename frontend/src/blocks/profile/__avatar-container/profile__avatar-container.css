@@ -1,0 +1,19 @@
+.profile__avatar-container {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  border-radius: 50%;
+}
+  
+.profile__avatar-container:hover {
+  cursor: pointer;
+} 
+  
+.profile__avatar-container:hover .profile__avatar {
+  opacity: .2;
+  transition: 0.4s ease;
+}
+  
+.profile__avatar-container:hover .profile__avatar-load {
+  display: block;
+}

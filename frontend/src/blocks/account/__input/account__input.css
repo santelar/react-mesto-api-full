@@ -1,0 +1,14 @@
+.account__input {
+    margin-bottom: 30px;
+    padding: 0px;
+    width: 100%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #CCCCCC;
+    background-color: #000000;
+    border: 0;
+    border-bottom: 2px solid #CCCCCC;
+}

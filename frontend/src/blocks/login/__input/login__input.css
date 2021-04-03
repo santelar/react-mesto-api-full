@@ -1,0 +1,17 @@
+.login__input {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #CCCCCC;
+    border: 0;
+    outline: none;
+    border-bottom: 2px solid #CCCCCC;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    min-height: 28px;
+    background-color: transparent;
+}
