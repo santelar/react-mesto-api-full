@@ -23,7 +23,7 @@ const createUser = (req, res, next) => {
       password: hash,
     }))
     .then((user) => {
-      res.status(200).send({ name: user.name, email: user.email });
+      res.status(200).send({ message: 'Пользователь успешно зарегистрирован' });
     })
     .catch((err) => {
       if (err.code === 11000) {
