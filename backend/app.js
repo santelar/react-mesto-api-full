@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -29,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(apiLogger);
 
-// Краш-тест
+// Крвш-тест
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
@@ -44,7 +43,7 @@ app.post('/signup',
       // eslint-disable-next-line no-useless-escape
       avatar: Joi.string().pattern(/https?:\/\/w{0,3}[a-z0-9-._~:\/?#[\]@!$&'()*+,;=]{0,}/i),
       email: Joi.string().required().email(),
-      password: Joi.string().required().min(8),
+      password: Joi.string().required().min(8).max(30),
     }),
   }),
   createUser);
@@ -52,18 +51,18 @@ app.post('/signin',
   celebrate({
     body: Joi.object().keys({
       email: Joi.string().required().email(),
-      password: Joi.string().required().min(8),
+      password: Joi.string().required().min(8).max(30),
     }),
   }),
   loginUser);
-app.use('/users', auth, users);
-app.use('/cards', auth, cards);
-app.use('/*', (req, res, next) => {
+app.use('/', auth, users);
+app.use('/', auth, cards);
+app.use('*', (req, res, next) => {
   next(new NotFoundError('Страница не найдена'));
 });
 
-app.use(errors());
 app.use(errLogger);
+app.use(errors());
 
 app.use((err, req, res, next) => {
   const { message } = err;
@@ -77,6 +76,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
   console.log(`Mesto-project start on port ${PORT}`);
 });

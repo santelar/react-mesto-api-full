@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 425px) {
   .footer {
-    padding: 36px 0 36px 19px;
+  	padding: 36px 0 36px 19px;
   	margin-left: 0;
   }
 }

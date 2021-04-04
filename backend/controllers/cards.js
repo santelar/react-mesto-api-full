@@ -45,10 +45,8 @@ const putLike = (req, res, next) => {
     { $addToSet: { likes: req.user._id } },
     { new: true },
   )
+    .orFail(new NotFoundError('Карточка места не найдена'))
     .then((card) => {
-      if (!card) {
-        next(new NotFoundError('Карточка места не найдена'));
-      }
       res.status(200).send({ data: card });
     })
     .catch((err) => next(err));

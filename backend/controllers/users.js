@@ -22,7 +22,9 @@ const createUser = (req, res, next) => {
       email,
       password: hash,
     }))
-    .then((user) => res.status(200).send({ name: user.name, email: user.email }))
+    .then((user) => {
+      res.status(200).send({ name: user.name, email: user.email });
+    })
     .catch((err) => {
       if (err.code === 11000) {
         next(new ConflictError('Такой email уже зарегистрирован'));

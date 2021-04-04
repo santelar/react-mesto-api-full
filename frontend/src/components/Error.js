@@ -8,7 +8,7 @@ function Error() {
       <Header />
       <div className="error">
         <h3 className="error__title">Страница не найдена.</h3>
-        <Link to="/" className="account__switch-text">На главную страницу</Link>
+        <Link to="/" className="error__link">На главную страницу</Link>
       </div>
     </>
   );
