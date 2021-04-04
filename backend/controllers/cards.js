@@ -60,10 +60,10 @@ const removeLike = (req, res, next) => {
     { $pull: { likes: req.user._id } },
     { new: true },
   )
-  .orFail(new NotFoundError('Карточка места не найдена'))
-  .then((card) => {
-    res.status(200).send({ data: card });
-  })
+    .orFail(new NotFoundError('Карточка места не найдена'))
+    .then((card) => {
+      res.status(200).send({ data: card });
+    })
     .catch((err) => next(err));
 };
 

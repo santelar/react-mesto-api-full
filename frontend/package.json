@@ -4,7 +4,7 @@
   "author": "Artem Kondratyev",
   "description": "Mesto Project, written on React with <3",
   "private": true,
-  "homepage": ".",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
