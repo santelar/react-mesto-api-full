@@ -7,7 +7,7 @@ http://santelar.nomoredomains.icu/
 api.santelar.nomoredomains.icu/
 
 ### Публичный ip-адрес
-178.154.192.234
+84.201.161.28
 
 Проект `Mesto`, включающий фронтенд и бэкенд приложения.
 Проектная работа создана на Create React App с использованием JSX.
