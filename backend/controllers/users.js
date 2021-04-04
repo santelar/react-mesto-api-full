@@ -22,7 +22,7 @@ const createUser = (req, res, next) => {
       email,
       password: hash,
     }))
-    .then((user) => {
+    .then(() => {
       res.status(200).send({ message: 'Пользователь успешно зарегистрирован' });
     })
     .catch((err) => {
