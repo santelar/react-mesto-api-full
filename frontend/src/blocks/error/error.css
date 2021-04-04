@@ -1,12 +1,8 @@
 .error {
-height: 25px;
-font-family: inherit;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 1.2;
-color: #FF0000;
-display: block;
-box-sizing: border-box;
-margin: 5px 0 0 0;
+  position: relative;
+  margin: 100px auto;
+  max-width: 358px;
+  height: 100vh;
+  color: #ffffff;
+  text-align: center;
 }

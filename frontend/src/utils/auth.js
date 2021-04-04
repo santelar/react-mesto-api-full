@@ -1,4 +1,4 @@
-export const baseUrl = 'http://api.santelar.nomoredomains.icu';
+export const baseUrl = 'https://api.santelar.nomoredomains.icu';
 
 //export const baseUrl = 'http://localhost:3001';
 
@@ -13,7 +13,7 @@ export const register = (email, password) => {
       'Accept': 'application/json',
       'Content-Type':'application/json',
     },
-    body: JSON.stringify({email, password})
+    body: JSON.stringify({ email, password })
   })
     .then((res) => checkResponse(res));
 };

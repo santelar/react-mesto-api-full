@@ -1,27 +1,24 @@
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
-const AuthError = require('../errors/401-authError');
 const { default: validator } = require('validator');
+const AuthError = require('../errors/401-authError');
 
 const regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\\+~#=]+\.[a-zA-Z0-9()]+([-a-zA-Z0-9()@:%_\\+.~#?&/=#]*)/;
 
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: false,
     minlength: 2,
     maxlength: 30,
     default: 'Жак-Ив Кусто',
   },
   about: {
     type: String,
-    required: false,
     minlength: 2,
     maxlength: 30,
     default: 'Исследователь',
   },
   avatar: {
-    required: false,
     type: String,
     validate: {
       validator(v) {
@@ -45,6 +42,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     type: String,
     select: false,
+    minlength: 8,
   },
 });
 

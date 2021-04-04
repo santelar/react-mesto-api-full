@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -9,6 +10,7 @@ const users = require('./routes/users.js');
 const cards = require('./routes/cards.js');
 const { loginUser, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
+const NotFoundError = require('./errors/404-notFoundError');
 
 const { PORT = 3001 } = process.env;
 
@@ -27,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(apiLogger);
 
-// Крвш-тест
+// Краш-тест
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
@@ -37,8 +39,12 @@ app.get('/crash-test', () => {
 app.post('/signup',
   celebrate({
     body: Joi.object().keys({
+      name: Joi.string().min(2).max(30),
+      about: Joi.string().min(2).max(30),
+      // eslint-disable-next-line no-useless-escape
+      avatar: Joi.string().pattern(/https?:\/\/w{0,3}[a-z0-9-._~:\/?#[\]@!$&'()*+,;=]{0,}/i),
       email: Joi.string().required().email(),
-      password: Joi.string().required(),
+      password: Joi.string().required().min(8),
     }),
   }),
   createUser);
@@ -46,15 +52,18 @@ app.post('/signin',
   celebrate({
     body: Joi.object().keys({
       email: Joi.string().required().email(),
-      password: Joi.string().required(),
+      password: Joi.string().required().min(8),
     }),
   }),
   loginUser);
-app.use('/', auth, users);
-app.use('/', auth, cards);
+app.use('/users', auth, users);
+app.use('/cards', auth, cards);
+app.use('/*', (req, res, next) => {
+  next(new NotFoundError('Страница не найдена'));
+});
 
-app.use(errLogger);
 app.use(errors());
+app.use(errLogger);
 
 app.use((err, req, res, next) => {
   const { message } = err;
@@ -68,5 +77,6 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`Mesto-project start on port ${PORT}`);
 });

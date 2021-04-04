@@ -3,15 +3,6 @@ const ForbiddenError = require('../errors/403-forbiddenError');
 const NotFoundError = require('../errors/404-notFoundError');
 const ValidationError = require('../errors/400-validationError');
 
-const getCard = (req, res, next) => {
-  Card.findOne({ _id: req.params.cardId })
-    .orFail(() => new NotFoundError('Карточка с таким id не найдена'))
-    .then((card) => {
-      res.status(200).send({ card });
-    })
-    .catch((err) => next(err));
-};
-
 const getCards = (req, res, next) => {
   Card.find({})
     .then((cards) => res.status(200).send({ cards }))
@@ -69,12 +60,10 @@ const removeLike = (req, res, next) => {
     { $pull: { likes: req.user._id } },
     { new: true },
   )
-    .then((card) => {
-      if (!card) {
-        next(new NotFoundError('Карточка места не найдена'));
-      }
-      return res.status(200).send({ data: card });
-    })
+  .orFail(new NotFoundError('Карточка места не найдена'))
+  .then((card) => {
+    res.status(200).send({ data: card });
+  })
     .catch((err) => next(err));
 };
 
@@ -84,5 +73,4 @@ module.exports = {
   deleteCard,
   putLike,
   removeLike,
-  getCard,
 };

@@ -16,6 +16,7 @@ import ImagePopup from './ImagePopup';
 import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
+import Error from "./Error";
 
 function App() {
 
@@ -241,6 +242,9 @@ function App() {
           </Route>
           <Route path="/sign-up">
             <Register handleRegister={handleRegister} />
+          </Route>
+          <Route path="*">
+            <Error />
           </Route>
         </Switch>
 
