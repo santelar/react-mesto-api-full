@@ -144,6 +144,12 @@ function App() {
     window.addEventListener('keydown', handleClosePopupWithEsc);
   }
 
+  function handleClickOverlay(evt) {
+    if (evt.target.classList.contains('popup_opened')) {
+      closeAllPopups();
+    }
+  }
+
   function handleClosePopupWithEsc(event) {
     if (event.keyCode === 27) {
       closeAllPopups();
@@ -188,6 +194,7 @@ function App() {
     setIsAvatarPopupOpen(false);
     setIsProfilePopupOpen(false);
     setSelectedCard(null);
+    setIsTooltipOpened(false);
     window.removeEventListener('keydown', handleClosePopupWithEsc);
   }
 
@@ -255,18 +262,21 @@ function App() {
           onClose={closeAllPopups}
           onUpdateAvatar={handleUpdateAvatar}
           onClick={(e) => e.stopPropagation()}
+          onClickOverlay={handleClickOverlay}
         />
 
         <AddPlacePopup
           isOpen={isAddPlacePopupOpen}
           onClose={closeAllPopups}
           onAddPlace={handleAddPlace}
+          onClickOverlay={handleClickOverlay}
         />
 
         <EditProfilePopup
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
           onUpdateUser={handleUpdateUser}
+          onClickOverlay={handleClickOverlay}
         />
 
         <PopupWithForm
@@ -274,12 +284,14 @@ function App() {
           name="confirm-delete"
           title="Вы уверены?"
           buttonName="Да"
+          onClickOverlay={handleClickOverlay}
         >
         </PopupWithForm>
 
         <ImagePopup
           card={selectedCard}
           onClose={closeAllPopups}
+          onClickOverlay={handleClickOverlay}
         />
         <InfoTooltip
           isOpen={isTooltipOpened}
@@ -287,6 +299,7 @@ function App() {
           isAuthSuccess={isAuth}
           goodRegister="Вы успешно зарегестрировались!"
           badRegister="Что-то пошло не так! Попробуйте ещё раз."
+          onClickOverlay={handleClickOverlay}
         />
       </div>
     </CurrentUserContext.Provider>

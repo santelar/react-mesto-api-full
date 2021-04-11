@@ -6,3 +6,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 620px) {
+  .header {
+    padding: 0 10px;
+  }
+}

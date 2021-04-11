@@ -1,24 +1,27 @@
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
-const { default: validator } = require('validator');
 const AuthError = require('../errors/401-authError');
+const { default: validator } = require('validator');
 
 const regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\\+~#=]+\.[a-zA-Z0-9()]+([-a-zA-Z0-9()@:%_\\+.~#?&/=#]*)/;
 
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
+    required: false,
     minlength: 2,
     maxlength: 30,
-    default: 'Жак-Ив Кусто',
+    default: 'Юрий Гагарин',
   },
   about: {
     type: String,
+    required: false,
     minlength: 2,
     maxlength: 30,
-    default: 'Исследователь',
+    default: 'Космонавт',
   },
   avatar: {
+    required: false,
     type: String,
     validate: {
       validator(v) {
@@ -26,7 +29,7 @@ const userSchema = new mongoose.Schema({
       },
       message: 'Введите корректный адрес',
     },
-    default: 'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',
+    default: 'https://yt3.ggpht.com/ytc/AAUvwnj3kQctos-7S-eJBP-qoM6v_9QLWcpGeRVxtKa5=s900-c-k-c0x00ffffff-no-rj',
   },
   email: {
     required: true,

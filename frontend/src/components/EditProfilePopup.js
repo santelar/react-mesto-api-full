@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import PopupWithForm from "./PopupWithForm";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
-function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
+function EditProfilePopup({ isOpen, onClose, onUpdateUser, onClickOverlay }) {
   const currentUser = useContext(CurrentUserContext);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -34,6 +34,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
     name="edit-profile"
     title="Редактировать профиль"
     onSubmit={handleSubmit}
+    onClickOverlay={onClickOverlay}
     >
       <input
         type="text"

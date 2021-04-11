@@ -1,10 +1,10 @@
 import React from 'react';
 import buttonPlus from '../images/add-button__plus.svg';
 
-function ImagePopup({ card, onClose }) {
+function ImagePopup({ card, onClose, onClickOverlay }) {
 
   return (
-    <div className={`popup popup__image ${card && "popup_opened"}`}>
+    <div className={`popup popup__image ${card && "popup_opened"}`} onClick={onClickOverlay}>
       <div className="popup__image-button">
         <button type="button" className="button" onClick={onClose}><img src={buttonPlus}
           alt="Закрыть" className="popup__close popup__close_image" /></button>

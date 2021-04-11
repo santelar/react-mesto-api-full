@@ -28,13 +28,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(apiLogger);
 
-// Крвш-тест
-app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
-
 app.post('/signup',
   celebrate({
     body: Joi.object().keys({
@@ -43,7 +36,7 @@ app.post('/signup',
       // eslint-disable-next-line no-useless-escape
       avatar: Joi.string().pattern(/https?:\/\/w{0,3}[a-z0-9-._~:\/?#[\]@!$&'()*+,;=]{0,}/i),
       email: Joi.string().required().email(),
-      password: Joi.string().required().min(8).max(30),
+      password: Joi.string().required().min(2).max(30),
     }),
   }),
   createUser);
@@ -51,7 +44,7 @@ app.post('/signin',
   celebrate({
     body: Joi.object().keys({
       email: Joi.string().required().email(),
-      password: Joi.string().required().min(8).max(30),
+      password: Joi.string().required().min(2).max(30),
     }),
   }),
   loginUser);

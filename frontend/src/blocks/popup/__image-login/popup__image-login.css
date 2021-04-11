@@ -1,5 +1,11 @@
 .popup__image-login {
     margin: 0px;
     width: 120px;
+}
 
+@media screen and (max-width: 620px) {
+  .popup__image-login {
+    margin: 0px;
+    width: 90px;
+  }
 }

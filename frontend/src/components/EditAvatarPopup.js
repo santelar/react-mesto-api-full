@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import PopupWithForm from "./PopupWithForm";
 
-function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
+function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, onClickOverlay }) {
   const avatarRef = useRef('');
 
   useEffect(() => {
@@ -22,6 +22,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
       name="avatar"
       title="Обновить аватар"
       onSubmit={handleSubmit}
+      onClickOverlay={onClickOverlay}
     >
       <input
         ref={avatarRef}

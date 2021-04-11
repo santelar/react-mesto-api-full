@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PopupWithForm from "./PopupWithForm";
 
-function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
+function AddPlacePopup({ isOpen, onClose, onAddPlace, onClickOverlay }) {
 
   const [placeRef, setPlaceRef] = useState('');
   const [urlRef, setUrlRef] = useState('');
@@ -38,6 +38,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
       title="Новое место"
       name="place"
       onSubmit={handleSubmit}
+      onClickOverlay={onClickOverlay}
     >
       <input
         required
