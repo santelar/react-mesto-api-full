@@ -21,3 +21,9 @@
   left: 200px;
   }
 }
+
+@media screen and (max-width: 430px) {
+  .popup__close {
+    left: 130px;
+    }
+}

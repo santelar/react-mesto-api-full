@@ -1,10 +1,17 @@
 .popup__close_info {
-    top: -60px;
+    top: -43px;
 }
 
 @media screen and (max-width: 620px) {
   .popup__close_info {
-    top: -43px;
-    left: 172px;
+    top: -25px;
+    left: 200px;
   }
+}
+
+@media screen and (max-width: 430px) {
+  .popup__close_info {
+    top: -23px;
+    left: 151px;
+    }
 }

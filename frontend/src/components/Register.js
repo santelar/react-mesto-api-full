@@ -19,7 +19,7 @@ function Register({ handleRegister }) {
     <>
       <Header loginText={'Войти'} link="/sign-in" />
       <section className="account">
-        <form onSubmit={handleSubmit} className="account__container account__containe_register">
+        <form onSubmit={handleSubmit} className="account__container">
           <h3 className="account__title">Регистрация</h3>
           <input value={data.email} onChange={handleChangeData} placeholder="Email" type="email" name="email"
               className="account__input account__input_register" id="email" required minLength="2" maxLength="40" />

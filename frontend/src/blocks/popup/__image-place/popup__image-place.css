@@ -3,5 +3,17 @@
     overflow: hidden;
     max-width: 75vw;
     max-height: 75vh;
- 
+    width: 430px;
+  }
+
+  @media screen and (max-width: 620px) {
+    .popup__image-place {
+      width: 380px;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    .popup__image-place {
+      width: 280px;
+    }
   }

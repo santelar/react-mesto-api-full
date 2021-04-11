@@ -20,7 +20,7 @@ function Login({ handleLogin }) {
     <>
       <Header loginText={'Регистрация'} link="/sign-up" />
       <section className="account">
-        <form onSubmit={handleSubmit} className="account__container account__container_register">
+        <form onSubmit={handleSubmit} className="account__container">
           <h3 className="account__title">Вход</h3>
           <input value={data.email} onChange={handleChangeData} placeholder="Email" type="email" name="email"
             className="account__input account__input_register" id="email" required minLength="2" maxLength="40" />

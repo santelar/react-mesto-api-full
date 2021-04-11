@@ -4,3 +4,9 @@
     margin: 0px 24px 0px 0px;
     color: white;
 }
+
+@media screen and (max-width: 430px) {
+  .header__email {
+    font-size: 14px;
+  }
+}

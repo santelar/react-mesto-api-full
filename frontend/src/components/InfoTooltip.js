@@ -13,7 +13,7 @@ export default function InfoTooltip({
 }) {
   return (
     <section className={`${isOpen ? "popup_opened" : ""} popup popup__info`} onClick={onClickOverlay}>
-      <div className="popup__container popup__container_login">
+      <div className="popup__container">
         <button className="button" aria-label="Закрыть" onClick={onClose}><img src={buttonPlus} alt="Закрыть" className="popup__close popup__close_info" /></button>
         <img className="popup__image-login" alt="info" src={`${isAuthSuccess ? login : loginErr}`} />
         <p className="popup__text-login">{`${isAuthSuccess ? goodRegister : badRegister}`}</p>
