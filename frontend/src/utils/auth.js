@@ -1,6 +1,6 @@
-//export const baseUrl = 'https://api.santelar.nomoredomains.icu';
+export const baseUrl = 'https://api.santelar.nomoredomains.icu';
 
-export const baseUrl = 'http://localhost:3001';
+//export const baseUrl = 'http://localhost:3001';
 
 const checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`)
