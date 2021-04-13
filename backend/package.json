@@ -8,16 +8,9 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tom-Pepper/express-mesto.git"
-  },
   "keywords": [],
   "author": "Artem Kondratev",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Tom-Pepper/express-mesto/issues"
-  },
   "homepage": "./",
   "dependencies": {
     "bcryptjs": "^2.4.3",
