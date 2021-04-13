@@ -9,7 +9,7 @@
     "dev": "nodemon app.js"
   },
   "keywords": [],
-  "author": "Artem Kondratev",
+  "author": "Alexander Ponomarenko",
   "license": "ISC",
   "homepage": "./",
   "dependencies": {
