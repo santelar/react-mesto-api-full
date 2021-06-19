@@ -1,13 +1,14 @@
 # react-mesto-api-full
 
-### Frpnt-end проекта
+### Front-end проекта
 http://santelar.nomoredomains.icu/
-
 ### Back-end проекта
 api.santelar.nomoredomains.icu/
 
 ### Публичный ip-адрес
 84.201.161.28
+
+p.s. Если ссылки не работают - закончился учебный грант на облако :). Можно скачать и распаковать проект, установить зависимости (npm install) и запустить локальный сервер (npm start). Бэк - https://github.com/santelar/mesto-backend-deploy
 
 Проект `Mesto`, включающий фронтенд и бэкенд приложения.
 Проектная работа создана на Create React App с использованием JSX.
